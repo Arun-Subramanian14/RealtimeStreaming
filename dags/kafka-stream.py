@@ -41,7 +41,7 @@ def stream_data():
     producer=KafkaProducer(bootstrap_servers=['localhost:9092'],max_block_ms=5000)
     producer.send('users_created', json.dumps(res).encode('utf-8'))
 
-# with DAG('user_automation',
+# with dags('user_automation',
 #           default_args=default_args,
 #           schedule='@daily',
 #           catchup=False) as dag:
