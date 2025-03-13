@@ -131,7 +131,8 @@ services:
 
   x-airflow-common:
     &airflow-common
-    image: apache/airflow:2.0.0
+    #image: apache/airflow:2.0.0
+    build: .
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://postgres:postgres@postgres:5432/airflow
